@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
+
+    <!-- INCLUDING JQUERY-->
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"
+        type='text/css'> -->
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+        integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
+
+    <!-- Font Awesome JS -->
+    <!-- <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+        integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
+        crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+        integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
+        crossorigin="anonymous"></script> -->
+
+
+</head>
+
+<style>
+    .logo {
+        margin-top: 25px;
+        width: 75px;
+        height: auto;
+        margin-top: -20%;
+
+    }
+
+    /* div.image::before {
+   content:url(http://placehold.it/350x150);
+    }​ */
+
+    td {
+        padding: -20px;
+    }
+
+    #toggle {
+        background: url("./images/Toggle_Sonar.png");
+        width: 26.67px;
+        height: 10px;
+        background-repeat: no-repeat;
+        margin-top: 50px;
+        /* background-attachment: fixed; */
+        background-position: center;
+    }
+
+    #nudge {
+        background: url("./images/Sonar_nudge.png");
+        width: 26.67px;
+        height: 10px;
+        background-repeat: no-repeat;
+        margin-top: 50px;
+        /* background-attachment: fixed; */
+        background-position: center;
+    }
+
+    #Availability {
+        background: url("./images/Sonar_Set_Availability.png");
+        width: 26.67px;
+        height: 10px;
+        background-repeat: no-repeat;
+        margin-top: 50px;
+        /* background-attachment: fixed; */
+        background-position: center;
+    }
+
+    #Secure {
+        background: url("./images/Sonar_Secure.png");
+        width: 26.67px;
+        height: 10px;
+        background-repeat: no-repeat;
+        margin-top: 50px;
+        /* background-attachment: fixed; */
+        background-position: center;
+    }
+
+    #Profile {
+        background: url("./images/Profile.png");
+        width: 26.67px;
+        height: 10px;
+        background-repeat: no-repeat;
+        margin-top: 50px;
+        /* background-attachment: fixed; */
+        background-position: center;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    .formPopup {
+        display: none;
+        margin-top: 10%;
+
+        border: 1px solid #999999;
+        width: 100%;
+        margin: 1rem;
+        padding: 2rem 2rem;
+        text-align: center;
+    }
+
+    .container {
+        border: 1px solid #999999;
+        
+
+    }
+
+    /* .togglepopup {
+        display: block;
+        position: ;
+        left: 45%;
+        top: 5%;
+        transform: translate(-50%, 5%);
+        border: 1px solid #999999;
+        z-index: 9;
+    } */
+
+    .card {
+        display: none;
+        margin-top: 19%;
+        margin-left: 2%;
+        border-radius: 10px;
+        
+
+    }
+
+    .card-body {
+        padding: 0.2rem;
+
+    }
+
+
+    .nudge-button {
+        background: transparent;
+        border: none !important;
+        font: Roboto;
+        font-size: 12px;
+        color: #4D4D4D;
+    }
+
+    .tgl-button {
+        background: transparent;
+        border: none !important;
+        font: Roboto;
+        font-size: 12px;
+        color: #4D4D4D;
+
+    }
+
+    .premium {
+        margin-top: 100px;
+        align-content: left;
+
+    }
+
+    .mytext {
+        width: 60px;
+        height: 30px;
+    }
+
+    .btn-confirm {
+        background-color: #17C631;
+        border: none;
+        border-radius: 8px;
+        color: #FFFFFF;
+        padding: 10px 25px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        width: 120px;
+        height: 40px;
+    }
+
+    .btn-cancel {
+        background-color: #17C631;
+        border: none;
+        border-radius: 8px;
+        color: #FFFFFF;
+        padding: 10px 25px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        width: 164px;
+        height: 49px;
+    }
+
+    .btn-tgl-confirm {
+        background-color: #17C631;
+        border: none;
+        border-radius: 8px;
+        color: #FFFFFF;
+        padding: 4px 5px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        width: 110px;
+        height: 40px;
+    }
+
+
+    #popup-logo {
+        background: url("./images/SonarTransparentBlack_logo.png");
+        width: 70px;
+        height: 50px;
+        background-repeat: no-repeat;
+        margin-top: 50px;
+        /* background-attachment: fixed; */
+        background-position: center;
+
+    }
+
+    #close {
+        background: url("./images/Vector_close.png");
+        width: 20px;
+        height: 10px;
+        background-repeat: no-repeat;
+        margin-top: 10px;
+        /* background-attachment: fixed; */
+        background-position: right;
+    }
+
+    .top-buffer { margin-top:15px; }
+    input{
+        border: 1px solid #D1F8D7;
+    }
+
+    .checkbox:checked::before{
+        background: #17C631;
+    }
+    input:focus {
+        border-color: #28a745;
+        box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+    } 
+
+    
+</style>
+
+<body>
+
+    <div class="card" style="width: 22rem;" id="togglepop">
+        <div class="card-body">
+            <div class="row">
+                <div class="col align-self-end">
+
+                    <button type="button" class="close" aria-label="Close" id="tgl-cancel">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+            </div>
+            <div class="row align-items-center ">
+                <div class="col-3">
+                    <img class="logo" src="./images/SonarTransparentBlack.png">
+                </div>
+
+                <div class="col-9" style="width:10rem; margin-top: -5%;">
+                    <input class="togglecheck" type="checkbox" id="tgl-check">
+                    <a style="font-size: 15px;"><b>Turn off Sonar for this email?</b> </a>
+                </div>
+
+            </div>
+
+            <div class="row justify-content-center top-buffer" >
+                <div class="col-4 align-self-end">
+                    <button type="button" class="btn-tgl-confirm" id="tgl-confirm">Yes, Confirm</button>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="card" style="width: 22rem;" id="popupForm">
+        <div class="card-body">
+            <div class="row">
+                <div class="col align-self-end">
+
+                    <button type="button" class="close" aria-label="Close" id="nudge-cancel">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+            </div>
+
+            <div class="row align-items-center">
+                <div class="col-3">
+                    <img class="logo" src="./images/SonarTransparentBlack.png">
+                </div>
+
+                <div class="col-9" style="width:10rem; margin-top: -5%;">
+                    <a style="font-size: 20px;"><b>Conditional Nudge</b> </a>
+                </div>
+
+            </div>
+
+            <div class="row justify-content-center top-buffer">
+
+                <div class="col-8 align-items-center">
+                    <input type="text" id="Days" placeholder="Days" class="mytext">
+                    <input type="text" id="Hours" placeholder="Hours" class="mytext">
+                    <input type="text" id="Mins." placeholder="Mins." class="mytext">
+                    
+                </div>
+
+   
+            </div>
+
+            <div class="row justify-content-center top-buffer">
+                <div class="col-5 align-items-center">
+                    <button type="button" class="btn-tgl-confirm" id="confirm">Yes, Confirm</button>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    
+    <div>
+        <table class="premium" style="background-color:#D1F8D7; padding: 0.0rem; position: absolute; top:50%;">
+            <tbody>
+                <tr style="height:20px;">
+
+
+                    <td id="toggle"> </td>
+                    <td>
+                        <button class='tgl-button' type="reset" id="togglebutton">Toggle Sonar</button>
+                    </td>
+                  
+
+                    <td></td>
+                    <td></td>
+
+                    <td id="nudge"></td>
+                    <td>
+                        <button class='nudge-button' id="nudgebutton">Nudge</button>
+                    </td>
+
+                  
+
+
+                   
+
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+
+    <script src="./src/Premium_Features.js"></script>
+</body>
+
+
+
+
+</html>

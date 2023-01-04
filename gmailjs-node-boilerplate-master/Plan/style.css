@@ -1,0 +1,75 @@
+/*
+    DEMO STYLE
+*/
+.wrapper {
+    display: flex;
+    width: 100%;
+}
+
+
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #fafafa;
+    text-size:5px
+}
+
+
+.table-borderless td,
+.table-borderless th {
+    border: 0;
+}
+
+
+img {
+    display: block;
+    max-width: 75%;
+    height: 70px;
+  }
+
+.navbar {
+    padding: 15px 10px;
+    background: #fff;
+    border-bottom: 1px gray;    
+}
+
+.line {
+    width: 137%;
+    height: 1px;
+    border: 0.1px solid #ddd;
+    margin: 30px 0;
+}
+.line_top {
+    height: 1px;
+    border: 0.1px solid #ddd;
+}
+
+
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+
+.center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+
+
+
+
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+
+#content {
+    width: 75%;
+    padding: 20px;
+    min-height: 100vh;
+    transition: all 0.3s;
+}
+

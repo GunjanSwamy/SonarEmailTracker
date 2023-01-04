@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- <script type="text/javascript" src="index.js"></script> -->
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- INCLUDING JQUERY-->
+  <!-- <script src="https://code.jquery.com/jquery-3.5.1.js"></script> -->
+
+
+  <title>Sonar</title>
+  <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"
+    type='text/css'> -->
+
+
+  <!-- Bootstrap CSS CDN -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+    integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+  <!-- Our Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Font Awesome JS -->
+  <!-- <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+    integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
+    crossorigin="anonymous"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+    integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
+    crossorigin="anonymous"></script> -->
+
+  <style>
+    .logo {
+      margin-top: 65px;
+      width: 110px;
+      height: auto;
+      margin-top: 5%;
+
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <div class="wrapper bg-white">
+    <!-- Sidebar -->
+    <nav id="sidebar">
+      <div class=" p-3 bg-white rounded">
+        <div class="container-fluid ">
+          <div class="navbar-header">
+            <img class="logo" type="image" src="./images/SonarTransparentBlack.png" alt="Sonar" />
+          </div>
+        </div>
+      </div>
+
+      <ul class="list-unstyled components">
+
+        <div class=" p-3 mb-5 bg-white rounded">
+          <h3>Tracking Activity</h3>
+          <div class="container">
+            <li>
+              <a href="#" style="color:gray">
+                <i class="fa fa-id-badge"></i>
+                Dashboard Premium</a>
+            </li>
+
+            <li>
+              <a href="Queued_emails.html" style="color:gray">
+
+                <i class="fa fa-list" aria-hidden="true"></i>
+                Queued emails</a>
+            </li>
+
+            <li>
+              <a href="https://accounts.google.com/v3/signin/identifier?dsh=S721470132%3A1669923049129939&continue=https%3A%2F%2Fcalendar.google.com%2Fcalendar%2Fr&followup=https%3A%2F%2Fcalendar.google.com%2Fcalendar%2Fr&osid=1&passive=1209600&service=cl&flowName=GlifWebSignIn&flowEntry=ServiceLogin&ifkv=ARgdvAvQ59xCft0brqxDoPd9Oi62W1mM7A6qlkrvOpm9-8tNo6OjW7L6s_a-nYRbZmG_n6qNwahM"
+                style="color: gray">
+
+                <i class="fa fa-calendar-alt"></i>
+                Calendar Premium</a>
+            </li>
+          </div>
+        </div>
+      </ul>
+    </nav>
+
+
+    <!-- Page Content -->
+    <div id="content">
+      <!-- TopNavbar -->
+
+      <nav class="navbar navbar-expand-sm ">
+        <!-- Container wrapper -->
+        <div class="container-fluid ">
+
+          <!-- Collapsible wrapper -->
+          <div class="collapse navbar-collapse " id="navbarSupportedContent">
+            <!-- Navbar brand -->
+
+
+            <!-- Left links -->
+            <ul class="navbar-nav ml-auto mb-2 mb-sm-0 ">
+              <li class="nav-item">
+
+                <a href="Plan/pricing.html" style="color:green">
+                  <button formaction="/Plan/pricing.html" type="button" class="btn btn-outline-success">
+                    <!--window.location.href='https://w3docs.com';-->
+                    Upgrade plan
+                  </button>
+                </a>
+
+              </li>
+            </ul>
+            <span style="width:1em;"> </span>
+
+
+
+            <!-- Setting button -->
+            <ul class="navbar-nav me-auto mb-2 mb-sm-0">
+              <button class="btn btn-link" data-bs-toggle="modal" data-bs-target="#setting">
+                <i class="fas fa-cog fa-2x "></i>
+              </button>
+            </ul>
+
+            <!-- Account button -->
+            <ul class="navbar-nav me-auto mb-2 mb-sm-0">
+
+              <button class="btn btn-link" data-bs-toggle="modal" data-bs-target="#account">
+                <i class="fas fa-user-circle fa-2x"></i>
+
+              </button>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+
+      <div class="line_top"></div>
+
+      <div id="content">
+        <h2>Your Profile</h2>
+
+        <table class="table table-borderless table-condensed table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Your Name</th>
+
+              <td scope="col" id="user_name"> ToDo
+                <script type="text/javascript" src="index.js">
+                  function GetCustomer(token, emailId) { }
+                </script>
+              </td>
+
+              <!-- <script>
+                              fetch("data.json")
+                              .then(response => response.json())
+                              .then(data => {
+                                console.log(data.name)
+                                document.querySelector("#user_name").innerText = data.name
+                              })
+                            </script> -->
+
+            </tr>
+          </thead>
+          <thead>
+            <tr>
+              <th scope="col">Timezone</th>
+              <td scope="col" id="user_time_zone">ToDo</td>
+
+            </tr>
+          </thead>
+        </table>
+        <!-- <button type="button" class="btn btn-success">Edit Profile</button> -->
+
+        <div class="line"></div>
+
+        <h2>Your Plan </h2>
+        <table class="table table-borderless table-condensed table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Your current plan </th>
+              <td scope="col" id="user_plan">ToDo</th>
+            </tr>
+          </thead>
+          <thead>
+            <tr>
+              <th scope="col">Cost</th>
+              <td scope="col"> $0</th>
+            </tr>
+          </thead>
+        </table>
+        <a href="Plan/pricing.html" style="color:green">
+          <button formaction="/Plan/pricing.html" type="button" class="btn btn-success">
+            <!--window.location.href='https://w3docs.com';-->
+            Upgrade plan
+          </button>
+        </a>
+      </div>
+    </div>
+
+
+
+    <!-- Setting dashboard -->
+
+    <div class="modal fade" id="setting" tabindex="-1" aria-labelledby="enrollLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title" id="enrollLabel">Setting</h3>
+
+          </div>
+
+
+          <div class="modal-body">
+            <h4> General </h4>
+            <form>
+
+              <label class="switch">
+                <input type="checkbox" checked>
+                Remove Sonar Watermark
+                <span class="slider round"></span>
+              </label>
+            </form>
+
+            <form>
+
+              <label class="switch">
+                <input type="checkbox" checked>
+                Stop Sonar Mail Track
+                <span class="slider round"></span>
+              </label>
+
+            </form>
+          </div>
+
+          <div class="modal-body">
+            <h4> Notifications </h4>
+            <form>
+
+              <label class="switch">
+                <input type="checkbox" checked>
+                Open Notifications
+                <span class="slider round"></span>
+              </label>
+
+            </form>
+          </div>
+
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+              Close
+            </button>
+
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
+              Confirm
+            </button>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <!-- Account dashboard -->
+
+    <div class="modal fade" id="account" tabindex="-1" aria-labelledby="enrollLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title" id="enrollLabel">Account</h3>
+
+          </div>
+
+
+          <div class="modal-body">
+            <form>
+
+              <div class="form-group">
+                <label for="exampleFormControlInput1">Your Email address</label>
+                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+              </div>
+            </form>
+
+            <form>
+
+              <label class="switch">
+                <input type="checkbox" checked>
+                Stop Sonar Mail Track
+                <span class="slider round"></span>
+              </label>
+
+            </form>
+          </div>
+
+          <div class="modal-body">
+            <h4> Notifications </h4>
+            <form>
+
+              <label class="switch">
+                <input type="checkbox" checked>
+                Open Notifications
+                <span class="slider round"></span>
+              </label>
+
+            </form>
+          </div>
+
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+              Close
+            </button>
+
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
+              Confirm
+            </button>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+      crossorigin="anonymous"></script>
+
+
+
+    jQuery CDN - Slim version (=without AJAX) 
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"></script>
+     Popper.JS 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+      integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+      crossorigin="anonymous"></script>
+    Bootstrap JS 
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+      integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+      crossorigin="anonymous"></script> -->
+    <script src="./src/Myprofile.js"></script>
+</body>
+
+</html>

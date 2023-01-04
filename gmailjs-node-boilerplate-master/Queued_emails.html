@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- include jquery library file-->
+    <script
+      type="text/javascript"
+      src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"
+    ></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $("#insert").click(function () {
+          //Get the input field values.
+          var name = $("#name").val();
+          var email = $("#email").val();
+
+          //use the $.post() method to call insert.php file.. this is the ajax request
+          $.post(
+            "insertcustomer.php",
+            { name: name, email: email },
+            function () {
+              //you could put some succes message javascript here
+            }
+          );
+          return false;
+        });
+      });
+    </script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- INCLUDING JQUERY-->
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+    <title>Sonar</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <!-- Bootstrap CSS CDN -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+      integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+      crossorigin="anonymous"
+    />
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Font Awesome JS -->
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+      integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+      integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <div class="wrapper bg-white">
+      <!-- Sidebar -->
+      <nav id="sidebar">
+        <div class="p-3 bg-white rounded">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <img type="image" src="sonar.png" alt="Sonar" />
+            </div>
+          </div>
+        </div>
+
+        <ul class="list-unstyled components">
+          <div class="p-3 mb-5 bg-white rounded">
+            <h3>Tracking Activity</h3>
+            <div class="container">
+              <li>
+                <a href="Dashboard_Premium.html" style="color:gray">
+                  <i class="fa fa-id-badge"></i>
+                  Dashboard Premium</a
+                >
+              </li>
+
+              <li>
+                <a href="#" style="color: gray">
+                  <i class="fa fa-list" aria-hidden="true"></i>
+                  Queued emails</a
+                >
+              </li>
+
+              <li>
+                <a href="https://accounts.google.com/v3/signin/identifier?dsh=S721470132%3A1669923049129939&continue=https%3A%2F%2Fcalendar.google.com%2Fcalendar%2Fr&followup=https%3A%2F%2Fcalendar.google.com%2Fcalendar%2Fr&osid=1&passive=1209600&service=cl&flowName=GlifWebSignIn&flowEntry=ServiceLogin&ifkv=ARgdvAvQ59xCft0brqxDoPd9Oi62W1mM7A6qlkrvOpm9-8tNo6OjW7L6s_a-nYRbZmG_n6qNwahM" style="color: gray">
+
+                  <i class="fa fa-calendar-alt"></i> 
+                  Calendar Premium</a>
+                
+              </li>
+            </div>
+          </div>
+        </ul>
+      </nav>
+
+      <!-- Page Content -->
+      <div id="content" >
+        <!-- TopNavbar -->
+    
+        <nav class="navbar navbar-expand-sm ">
+            <!-- Container wrapper -->
+            <div class="container-fluid ">
+            
+            <!-- Collapsible wrapper -->
+            <div class="collapse navbar-collapse " id="navbarSupportedContent" >
+                <!-- Navbar brand -->
+
+
+                <!-- Left links -->
+                <ul class="navbar-nav ml-auto mb-2 mb-sm-0 ">
+                <li class="nav-item">
+                    
+                      <a target="_blank" rel="noopener noreferrer" href="Plan/pricing.html" style="color:green">
+                        <button formaction="/Plan/pricing.html" type="button" class="btn btn-outline-success"> <!--window.location.href='https://w3docs.com';-->
+                          Upgrade plan
+                        </button>
+                      </a>
+                   
+                </li>
+                </ul>
+                <span style="width:1em;"> </span>
+
+                <ul class="navbar-nav me-auto mb-2 mb-sm-0">
+                <li class="nav-item ">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-cog fa-2x "></i>          
+                    </a>          
+                </li>
+                </ul>
+                <span style="width:1em;"> </span>
+
+                <ul class="navbar-nav me-auto mb-2 mb-sm-0">
+                <li class="nav-item">
+                <a class="text-reset me-3" href="#">
+                <i class="fas fa-user-circle fa-2x"></i>
+                </a>                     
+            </li>
+                </ul>
+            </div>
+            </div>
+        </nav>
+
+
+      <div class="line_top"></div>
+      <div id="content" >
+        <h3>Email Tracking</h3>
+
+      <div class="container">
+        <table class="table" width="500px" hight="10px">
+          <tr > 
+            <td width="20px" style="padding:5px;">Recipient</td>
+            <td width="30px" style="padding:5px;">Subject</td>
+            <td width="10px" style="padding:5px;">Openes</td>
+            <td width="10px" style="padding:5px;">Last opened</td>
+            <td width="50px" style="padding:5px;">sent</td>
+            <td width="20px" style="padding:7px;">Open in Gmail</td>
+          </tr>
+          <tr > 
+            <td width="20px" style="padding:5px;">recevier_email@gmail.com</td>
+            <td width="30px" style="padding:5px;">Hello</td>
+            <td width="10px" style="padding:5px;">2 times</td>
+            <td width="10px" style="padding:5px;">3 weeks ago</td>
+            <td width="50px" style="padding:5px;">21 Jul,2022 at 1:50 PM</td>
+            <td width="20px" style="padding:7px;">
+              <a target="_blank" rel="noopener noreferrer" href="Plan/pricing.html" style="color:green">
+                <button formaction="/Plan/pricing.html" type="button" class="btn btn-success">open</button></a></td>
+          </tr>
+          <tr > 
+            <td width="20px" style="padding:5px;">recevier_email@gmail.com</td>
+            <td width="30px" style="padding:5px;">Hello</td>
+            <td width="10px" style="padding:5px;">2 times</td>
+            <td width="10px" style="padding:5px;">3 weeks ago</td>
+            <td width="50px" style="padding:5px;">21 Jul,2022 at 1:50 PM</td>
+            <td width="20px" style="padding:7px;">
+              <a target="_blank" rel="noopener noreferrer" href="Plan/pricing.html" style="color:green">
+                <button formaction="/Plan/pricing.html" type="button" class="btn btn-success">open</button></a></td>
+          </tr>
+          <tr > 
+            <td width="20px" style="padding:5px;">recevier_email@gmail.com</td>
+            <td width="30px" style="padding:5px;">Hello</td>
+            <td width="10px" style="padding:5px;">2 times</td>
+            <td width="10px" style="padding:5px;">3 weeks ago</td>
+            <td width="50px" style="padding:5px;">21 Jul,2022 at 1:50 PM</td>
+            <td width="20px" style="padding:7px;">
+              <a target="_blank" rel="noopener noreferrer" href="Plan/pricing.html" style="color:green">
+                <button formaction="/Plan/pricing.html" type="button" class="btn btn-success">open</button></a></td>
+          </tr>
+          <tr > 
+            <td width="20px" style="padding:5px;">recevier_email@gmail.com</td>
+            <td width="30px" style="padding:5px;">Hello</td>
+            <td width="10px" style="padding:5px;">2 times</td>
+            <td width="10px" style="padding:5px;">3 weeks ago</td>
+            <td width="50px" style="padding:5px;">21 Jul,2022 at 1:50 PM</td>
+            <td width="20px" style="padding:7px;">
+              <a target="_blank" rel="noopener noreferrer" href="Plan/pricing.html" style="color:green">
+                <button formaction="/Plan/pricing.html" type="button" class="btn btn-success">open</button></a></td>
+          </tr>
+      </table>
+    </div>
+
+
+      </div>
+    </div>
+
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Popper.JS -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+      integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Bootstrap JS -->
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+      integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

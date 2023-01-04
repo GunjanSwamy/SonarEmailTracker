@@ -1,0 +1,69 @@
+{
+  "name": "Sonar",
+  "description": "Extension that allows read receipts for emails",
+  "version": "1.1",
+  "manifest_version": 2,
+  "icons": {
+    "16": "./images/SonarTransparentWhite.png",
+    "32": "./images/SonarTransparentWhite.png",
+    "48": "./images/SonarTransparentWhite.png",
+    "128": "./images/SonarTransparentWhite.png"
+  },
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA4A9oSz++8aB/u9R03+3l6Pu0UCnaI6x+0WaYeImZq/tLUPuiJu9r+g1Rf5XlFiD/vX/lZP4chO3ZON5SHVMl7dU21ZQkuUofCyIyAE/UB7sP2OSx+M1/hzM/fY7RKGUe4HDerD20Nf3I6fFeXxOoUNifAYp1/QFdeqvhLeohw0SGVtwrnVgK0fOZhY35QxErnhycZU8qOZsd5iYj+J41pDaA4uf+CuZi0V/RyLAV1MUQYZzMMGvO3LAgAiTtOacbPHlG/wc8hvnc7t5+8J1sCSs/cw8Tv1bjLp0i4nTu8WQ1oRk6kMmBWjYWMutFSyMYEZH72viGo2qL5VRNiBypnwIDAQAB",
+  "oauth2": {
+    "client_id": "845486106645-n85noraqrebp5eprn9aeipjuhkue6ufh.apps.googleusercontent.com",
+    "scopes": [
+      "profile email",
+      "https://www.googleapis.com/auth/contacts",
+      "https://mail.google.com/"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [ "*://mail.google.com/*" ],
+      "js": [ "./src/inboxsdk.js", "./src/myapp.js", "./src/premium_features.js"]
+    }
+  ],
+
+  "background": {
+    "scripts": [
+      "./src/background.js",
+      "./src/jsrsasign-all-min.js"
+    ]
+  },
+
+
+
+
+  "content_security_policy": "script-src 'self' 'unsafe-eval' https://accounts.google.com/gsi/client; object-src 'self'",
+
+  "options_page": "",
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": "./images/SonarTransparentWhite.png",
+    "icons": {
+      "16": "./images/SonarTransparentWhite.png",
+      "32": "./images/SonarTransparentWhite.png",
+      "48": "./images/SonarTransparentWhite.png",
+      "128": "./images/SonarTransparentWhite.png"
+    }
+  },
+
+
+
+  "permissions": [
+    "identity",
+    "identity.email",
+    "storage",
+    "https://apis.google.com/js/platform.js",
+    "https://ec2-18-119-156-157.us-east-2.compute.amazonaws.com:9999/oauth/token",
+    "https://ec2-18-119-156-157.us-east-2.compute.amazonaws.com:9999/customer"
+  ],
+  "web_accessible_resources": [
+    "compose_signature.html",
+    "Premium_features.html",
+    "Dashboard_Premium.html",
+    "https://apis.google.com/js/platform.js",
+    "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+  ]
+}

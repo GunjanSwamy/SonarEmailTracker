@@ -1,0 +1,841 @@
+{
+	"info": {
+		"_postman_id": "232466fe-874f-4d5e-ac05-a34a31051c62",
+		"name": "SONAR_BACKEND Ec2",
+		"description": "# Introduction\nWhat does your API do?\n\n# Overview\nThings that the developers should know about\n\n# Authentication\nWhat is the preferred way of using the API?\n\n# Error Codes\nWhat errors and status codes can a user expect?\n\n# Rate limit\nIs there a limit to the number of requests a user can send?",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12045302"
+	},
+	"item": [
+		{
+			"name": "socialLogin-Oauth",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "client123",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "secret123",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					},
+					{
+						"key": "authorID",
+						"value": "kartik_324234",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "grant_type",
+							"value": "social",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "karthik.karthikkn.lv@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "loginSource",
+							"value": "GOOGLE",
+							"type": "text"
+						},
+						{
+							"key": "firstName",
+							"value": "Kartik",
+							"type": "text"
+						},
+						{
+							"key": "lastName",
+							"value": "LV",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://ec2-18-119-156-157.us-east-2.compute.amazonaws.com:9999/oauth/token",
+					"protocol": "https",
+					"host": [
+						"ec2-18-119-156-157",
+						"us-east-2",
+						"compute",
+						"amazonaws",
+						"com"
+					],
+					"port": "9999",
+					"path": [
+						"oauth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "socialLogin-Oauth refreshtoken",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					},
+					{
+						"key": "authorID",
+						"value": "kartik_324234",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "grant_type",
+							"value": "refresh_token",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "client123",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "secret123",
+							"type": "text"
+						},
+						{
+							"key": "access_token",
+							"value": "2be1eb0f-e207-4756-8bcc-c75c79596726",
+							"type": "text"
+						},
+						{
+							"key": "refresh_token",
+							"value": "c48b4e1f-58d4-40ea-9df3-b3e97cf49f6f",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://ec2-18-119-156-157.us-east-2.compute.amazonaws.com:9999/oauth/token",
+					"protocol": "https",
+					"host": [
+						"ec2-18-119-156-157",
+						"us-east-2",
+						"compute",
+						"amazonaws",
+						"com"
+					],
+					"port": "9999",
+					"path": [
+						"oauth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "saveEmailData",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 8765d509-3b50-4591-9861-5cffb2b31557",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nudge\":true,\n    \"day\":0,\n    \"minute\":1,\n    \"second\":15,\n    \"recipientEmails\":[\"karthi@yopmail.com\",\"abc@yopmail.com\"]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://ec2-18-119-156-157.us-east-2.compute.amazonaws.com:9999/pixel/test/hello there testing pixelTracking/e19c0852-5b0a-11ed-9c05",
+					"protocol": "https",
+					"host": [
+						"ec2-18-119-156-157",
+						"us-east-2",
+						"compute",
+						"amazonaws",
+						"com"
+					],
+					"port": "9999",
+					"path": [
+						"pixel",
+						"test",
+						"hello there testing pixelTracking",
+						"e19c0852-5b0a-11ed-9c05"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "saveEmailData",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer ee451784-5cab-43e4-9848-c2c10ef97b84",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://ec2-18-119-156-157.us-east-2.compute.amazonaws.com:9999/pixel/test/hello there testing pixelTracking/e19c0852-5b0a-11ed-9b68",
+							"protocol": "http",
+							"host": [
+								"ec2-18-119-156-157",
+								"us-east-2",
+								"compute",
+								"amazonaws",
+								"com"
+							],
+							"port": "9999",
+							"path": [
+								"pixel",
+								"test",
+								"hello there testing pixelTracking",
+								"e19c0852-5b0a-11ed-9b68"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "POST, PUT, GET, OPTIONS, DELETE"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "x-requested-with, authorization"
+						},
+						{
+							"key": "Access-Control-Max-Age",
+							"value": "3600"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 08 Nov 2022 07:20:23 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "saveEmailData",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer 8765d509-3b50-4591-9861-5cffb2b31557",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nudge\":true,\n    \"day\":0,\n    \"minute\":1,\n    \"second\":15,\n    \"recipientEmails\":[\"karthi@yopmail.com\",\"abc@yopmail.com\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ec2-18-119-156-157.us-east-2.compute.amazonaws.com:9999/pixel/test/hello there testing pixelTracking/e19c0852-5b0a-11ed-9c05",
+							"protocol": "https",
+							"host": [
+								"ec2-18-119-156-157",
+								"us-east-2",
+								"compute",
+								"amazonaws",
+								"com"
+							],
+							"port": "9999",
+							"path": [
+								"pixel",
+								"test",
+								"hello there testing pixelTracking",
+								"e19c0852-5b0a-11ed-9c05"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "POST, PUT, GET, OPTIONS, DELETE"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "x-requested-with, authorization"
+						},
+						{
+							"key": "Access-Control-Max-Age",
+							"value": "3600"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31536000 ; includeSubDomains"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 28 Nov 2022 03:50:47 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "updateEmailViewCountPixel",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://ec2-18-119-156-157.us-east-2.compute.amazonaws.com:9999/pixel/e19c0852-5b0a-11ed-9b90",
+					"protocol": "https",
+					"host": [
+						"ec2-18-119-156-157",
+						"us-east-2",
+						"compute",
+						"amazonaws",
+						"com"
+					],
+					"port": "9999",
+					"path": [
+						"pixel",
+						"e19c0852-5b0a-11ed-9b90"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "updateEmailViewCountPixel",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://ec2-18-119-156-157.us-east-2.compute.amazonaws.com:9999/pixel/e19c0852-5b0a-11ed-9b68",
+							"protocol": "http",
+							"host": [
+								"ec2-18-119-156-157",
+								"us-east-2",
+								"compute",
+								"amazonaws",
+								"com"
+							],
+							"port": "9999",
+							"path": [
+								"pixel",
+								"e19c0852-5b0a-11ed-9b68"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "POST, PUT, GET, OPTIONS, DELETE"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "x-requested-with, authorization"
+						},
+						{
+							"key": "Access-Control-Max-Age",
+							"value": "3600"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 07 Nov 2022 02:59:48 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "getCustomer Copy",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 9301dfdb-544c-4d57-a55d-4ad6aba505e6",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://ec2-18-119-156-157.us-east-2.compute.amazonaws.com:9999/customer/ec2test@gmail.com",
+					"protocol": "https",
+					"host": [
+						"ec2-18-119-156-157",
+						"us-east-2",
+						"compute",
+						"amazonaws",
+						"com"
+					],
+					"port": "9999",
+					"path": [
+						"customer",
+						"ec2test@gmail.com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register User Copy 2",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"kartikAdmin\",\n    \"email\": \"karthik.karthikkn.lv@gmail.com\",\n    \"password\": \"12345\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://ec2-18-119-156-157.us-east-2.compute.amazonaws.com:9998/register",
+					"protocol": "http",
+					"host": [
+						"ec2-18-119-156-157",
+						"us-east-2",
+						"compute",
+						"amazonaws",
+						"com"
+					],
+					"port": "9998",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "activateUser Copy 2",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "activationCode",
+						"type": "text",
+						"value": "ZHKRGX"
+					},
+					{
+						"key": "userEmail",
+						"type": "text",
+						"value": "superman@yopmail.com"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://ec2-18-119-156-157.us-east-2.compute.amazonaws.com:9998/activateUser/superman@yopmail.com/ZHKRGX",
+					"protocol": "http",
+					"host": [
+						"ec2-18-119-156-157",
+						"us-east-2",
+						"compute",
+						"amazonaws",
+						"com"
+					],
+					"port": "9998",
+					"path": [
+						"activateUser",
+						"superman@yopmail.com",
+						"ZHKRGX"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "admin Oauth Copy",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "adminSecret",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "adminClient",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "authorID",
+						"value": "kartik_324234",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "motolvk@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "12345",
+							"type": "text"
+						},
+						{
+							"key": "firstName",
+							"value": "Kartik",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "lastName",
+							"value": "LV",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://ec2-18-119-156-157.us-east-2.compute.amazonaws.com:9998/oauth/token",
+					"protocol": "http",
+					"host": [
+						"ec2-18-119-156-157",
+						"us-east-2",
+						"compute",
+						"amazonaws",
+						"com"
+					],
+					"port": "9998",
+					"path": [
+						"oauth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "admin convertCustomer Copy",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 7b9a1aa7-d803-40f9-949f-5c195e354b1b",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"customerEmail\" : \"lvk12345@gmail.com\",\n    \"customerTypeTarget\": \"PREMIUM\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://ec2-18-119-156-157.us-east-2.compute.amazonaws.com:9998/admin/convertCustomer",
+					"protocol": "http",
+					"host": [
+						"ec2-18-119-156-157",
+						"us-east-2",
+						"compute",
+						"amazonaws",
+						"com"
+					],
+					"port": "9998",
+					"path": [
+						"admin",
+						"convertCustomer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "admin getAllCustomer Copy",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 7b9a1aa7-d803-40f9-949f-5c195e354b1b",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://ec2-18-119-156-157.us-east-2.compute.amazonaws.com:9998/admin/getAllCustomers",
+					"protocol": "http",
+					"host": [
+						"ec2-18-119-156-157",
+						"us-east-2",
+						"compute",
+						"amazonaws",
+						"com"
+					],
+					"port": "9998",
+					"path": [
+						"admin",
+						"getAllCustomers"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
